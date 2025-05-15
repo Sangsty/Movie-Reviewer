@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Review Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Movie Reviews</h1>
+        <nav>
+            <button id="loginBtn">Login</button>
+            <button id="signupBtn">Sign Up</button>
+            <button id="logoutBtn" style="display: none;">Logout</button>
+            <span id="userGreeting" style="display: none;"></span>
+        </nav>
+    </header>
+
+    <main>
+        <section id="authSection" style="display: none;">
+            <h2>Authentication</h2>
+            <div id="loginForm">
+                <input type="email" id="loginEmail" placeholder="Email">
+                <input type="password" id="loginPassword" placeholder="Password">
+                <button id="loginSubmit">Login</button>
+                <p id="loginError" class="error"></p>
+            </div>
+            <div id="signupForm" style="display: none;">
+                <input type="email" id="signupEmail" placeholder="Email">
+                <input type="password" id="signupPassword" placeholder="Password">
+                <button id="signupSubmit">Sign Up</button>
+                <p id="signupError" class="error"></p>
+            </div>
+        </section>
+
+        <section id="reviewFormSection" style="display: none;">
+            <h2>Add New Review</h2>
+            <input type="text" id="movieTitle" placeholder="Movie Title">
+            <textarea id="reviewText" placeholder="Your Review"></textarea>
+            <select id="starRating">
+                <option value="1">★</option>
+                <option value="2">★★</option>
+                <option value="3">★★★</option>
+                <option value="4">★★★★</option>
+                <option value="5">★★★★★</option>
+            </select>
+            <button id="submitReview">Submit Review</button>
+            <p id="reviewError" class="error"></p>
+        </section>
+
+        <section id="filterSection">
+            <h2>Filter Movies</h2>
+            <input type="text" id="searchTitle" placeholder="Search by Title">
+            <select id="filterGenre">
+                <option value="">All Genres</option>
+                </select>
+            <select id="filterRating">
+                <option value="">All Ratings</option>
+                <option value="5">★★★★★</option>
+                <option value="4">★★★★</option>
+                <option value="3">★★★</option>
+                <option value="2">★★</option>
+                <option value="1">★</option>
+            </select>
+        </section>
+
+        <section id="reviewsSection">
+            <h2>Movie Reviews</h2>
+            <div id="reviewsList">
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Movie Review Platform</p>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
